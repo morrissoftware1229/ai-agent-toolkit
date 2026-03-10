@@ -7,3 +7,4 @@ The company I work for at the time of this project is rapidly adopting generativ
 # Steps Completed So Far
 - Example folder structure was created
 - Script to parse json file was created
+- Script was updated to print additional fields from parsed file
