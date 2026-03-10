@@ -8,3 +8,4 @@ The company I work for at the time of this project is rapidly adopting generativ
 - Example folder structure was created
 - Script to parse json file was created
 - Script was updated to print additional fields from parsed file
+- Script was updated with a call to the model to summarize conversations focusing on what was learned and what steps to take next
