@@ -18,6 +18,38 @@ async function main() {
   console.log(`Conversations found: ${conversations.length}`);
 
   const first = conversations[0];
+
+  if (!first) {
+    throw new Error("No conversations found.");
+  }
+
+  const mapping = first.mapping;
+
+  if (!mapping || typeof mapping !== "object") {
+    throw new Error("Expected first conversation to contain a mapping object.");
+  }
+
+  const nodes = Object.values(mapping);
+
+  for (const node of nodes) {
+    const message = node.message;
+
+    if (!message) {
+      continue;
+    }
+
+    const role = message.author?.role ?? "unknown";
+    const parts = message.content?.parts;
+
+    if (!Array.isArray(parts)) {
+      continue;
+    }
+
+    const text = parts.join(" ");
+
+    console.log(`${role}: ${text}`);
+  }
+
   console.log(`First title: ${first?.title ?? "Untitled chat"}`);
 }
 
