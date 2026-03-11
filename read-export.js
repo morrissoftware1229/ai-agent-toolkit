@@ -36,7 +36,8 @@ async function main() {
   const transcript = formatConversation(first);
   const result = await summarizeConversation(transcript);
 
-  console.log(result);
+  const outputPath = "C:\\Users\\morri\\Documents\\LifeManagement\\LifeManagement\\chat-summary.md";
+  await fs.writeFile(outputPath, result, "utf8");
 }
 
 function formatConversation(conversation) {
@@ -97,6 +98,8 @@ ${transcript}
 
   return response.output_text;
 }
+
+
 
 main().catch((error) => {
   console.error(error.message);
