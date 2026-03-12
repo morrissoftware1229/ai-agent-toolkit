@@ -78,16 +78,12 @@ async function summarizeConversation(transcript) {
     input: `
 You are extracting useful information from a ChatGPT conversation.
 
-Return JSON with this exact shape:
-{
-  "learned": ["..."],
-  "actions": ["..."]
-}
+Return a series of bulleted items that show what I learned from our conversations in different categories.
 
 Rules:
-- "learned" should contain important things the user learned or clarified
-- "actions" should contain concrete follow-up tasks
+- The name of the category should appear before the items in that category.
 - Keep items concise
+- Keep items actionable.
 - Do not include duplicates
 - If nothing fits, return an empty array
 
