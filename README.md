@@ -11,3 +11,4 @@ The company I work for at the time of this project is rapidly adopting generativ
 - Script was updated with a call to the model to summarize conversations focusing on what was learned and what steps to take next
 - Script adjusted to write to Obsidian vault markdown file
 - New script performing graph traversal created, so less data can be fed into OpenAI API
+- Adjusted graph-traversal to output to a text file where read-exports reads from

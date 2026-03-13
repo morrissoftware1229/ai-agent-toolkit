@@ -23,8 +23,7 @@ async function main() {
 
   const orderedMessages = getOrderedMessages(firstConversation);
 
-  console.log(`Title: ${firstConversation.title ?? "Untitled chat"}`);
-  console.log("");
+  const lines = [];
 
   for (const message of orderedMessages) {
     const role = message.author?.role ?? "unknown";
@@ -40,9 +39,18 @@ async function main() {
       continue;
     }
 
-    console.log(`${role}: ${text}`);
-    console.log("");
+    lines.push(`${role}: ${text}`);
   }
+
+  const transcript = lines.join("\n\n");
+
+  await fs.writeFile(
+    "C:\\Users\\morri\\source\\repos\\ai-agent-toolkit\\conversations\\out.txt",
+    transcript,
+    "utf8"
+  );
+
+  console.log("Wrote transcript to out.txt");
 }
 
 function getOrderedMessages(conversation) {
