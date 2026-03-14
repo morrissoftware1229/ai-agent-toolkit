@@ -13,3 +13,4 @@ The company I work for at the time of this project is rapidly adopting generativ
 - New script performing graph traversal created, so less data can be fed into OpenAI API
 - Adjusted graph-traversal to output to a text file where read-exports reads from
 - Adjusted prompt to give more useful information and changed fs function from writing to appending
+- Changed file names and folder structure around

@@ -11,7 +11,7 @@ async function main() {
     throw new Error("OPENAI_API_KEY is not set.");
   }
 
-  const inputPath = ".\\conversations\\out.txt";
+  const inputPath = ".\\conversations\\chatgpt-transcripts.txt";
   const outputPath =
     "C:\\Users\\morri\\Documents\\LifeManagement\\LifeManagement\\chat-summary.md";
 
