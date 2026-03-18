@@ -52,28 +52,18 @@ function extractWeightEntries(xml) {
   console.log("Starting weight extraction...");
 
   const weights = [];
-  const observationRegex =
-    /<observation[\s\S]*?<type>HKQuantityTypeIdentifierBodyMass<\/type>[\s\S]*?<\/observation>/g;
+  const weightRegex =
+    /<type>HKQuantityTypeIdentifierBodyMass<\/type>[\s\S]*?<unit>([^<]+)<\/unit>[\s\S]*?<low value="([^"]+)"[\s\S]*?<value xsi:type="PQ" value="([^"]+)"/g;
 
   let match;
   let matchCount = 0;
 
-  while ((match = observationRegex.exec(xml)) !== null) {
+  while ((match = weightRegex.exec(xml)) !== null) {
     matchCount += 1;
 
-    const observation = match[0];
-
-    const valueMatch = observation.match(/<value>([^<]+)<\/value>/);
-    const lowDateMatch = observation.match(/<low value="([^"]+)"/);
-    const unitMatch = observation.match(/<unit>([^<]+)<\/unit>/);
-
-    if (!valueMatch || !lowDateMatch || !unitMatch) {
-      continue;
-    }
-
-    const value = Number.parseFloat(valueMatch[1]);
-    const rawDate = lowDateMatch[1];
-    const unit = unitMatch[1];
+    const unit = match[1];
+    const rawDate = match[2];
+    const value = Number.parseFloat(match[3]);
 
     if (!Number.isFinite(value)) {
       continue;
@@ -90,7 +80,9 @@ function extractWeightEntries(xml) {
   return weights;
 }
 
+
 function toIsoDate(dateString) {
+  console.log("toIsoDate called", dateString);
   const normalized = dateString.replace(
     /^(\d{4})(\d{2})(\d{2}).*/,
     "$1-$2-$3"
