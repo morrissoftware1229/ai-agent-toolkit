@@ -15,3 +15,4 @@ The company I work for at the time of this project is rapidly adopting generativ
 - Adjusted prompt to give more useful information and changed fs function from writing to appending
 - Changed file names and folder structure around
 - Corrected apple-health-data-extraction.js to output file information correctly, but there are some issues tying the extraction values to the values in my phone
+- Added pull-data.py file from another project to pull Oura data
