@@ -62,7 +62,7 @@ access_token = tokens["access_token"]
 refresh_token = tokens["refresh_token"]
 
 # Sets the target dates
-start_date = "2026-02-04"
+start_date = "2026-03-17"
 today = datetime.date.today().isoformat()
 tomorrow = (datetime.date.today() + datetime.timedelta(1)).isoformat()
 

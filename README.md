@@ -19,6 +19,7 @@ The company I work for at the time of this project is rapidly adopting generativ
 - Changed file names and folder structure around
 - Corrected apple-health-data-extraction.js to output file information correctly, but there are some issues tying the extraction values to the values in my phone
 - Added pull-data.py file from another project to pull Oura data
+- Fixed error that was preventing output of formatted weights, updated README
 
 # Future Plans
 - My pull-data.py file currently doesn't have handling for the email validation step that needs to be completed before data can be pulled for the first time. I'll add this functionality later because it will probably be unneccasrily complex to save one or a few button clicks.
